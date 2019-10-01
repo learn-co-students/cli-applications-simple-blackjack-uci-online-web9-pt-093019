@@ -70,13 +70,6 @@ describe "#initial_round" do
 
 end
 
-describe "invalid_command" do
-  it "prints 'Please enter a valid command' when called" do
-    expect($stdout).to receive(:puts).with("Please enter a valid command")
-    invalid_command
-  end
-end
-
 describe "#hit?" do
   it "calls on #prompt_user then #get_user_input" do
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
@@ -109,6 +102,13 @@ describe "#hit?" do
     
     hit?(7)
   end
+
+describe "invalid_command" do
+  it "prints 'Please enter a valid command' when called" do
+    expect($stdout).to receive(:puts).with("Please enter a valid command")
+    invalid_command
+  end
+end
 
 end
 
